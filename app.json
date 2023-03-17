@@ -1,7 +1,7 @@
 {
     "name": "ScrapperBot",
     "description": "help you to ban the all memebers from the group",
-    "repository": "https://github.com/attitudeking1/ScrapperBot",
+    "repository": "https://github.com/onenonlybotz/ScrapperBot",
     "buildpacks": [ { "url": "heroku/python" },
 { "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git" } ],
     "env": {
