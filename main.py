@@ -26,12 +26,12 @@ if not os.path.exists(f"Users/1669178360/phone.csv"):
    open(f"Users/1669178360/phone.csv","w")
 if not os.path.exists('data.csv'):
     open("data.csv","w")
-APP_ID = 6435225
-API_HASH = "Enter your api hash"
-BOT_TOKEN = "Enter you bot token"
-UPDATES_CHANNEL = "Infinity_botz"
-OWNER= [5032100535,1953656325]
-PREMIUM= ["Infinity_botz"]
+APP_ID = "16051908"
+API_HASH = "abf9b83f9ca40cf9f5ba9bf6e6afaa8b"
+BOT_TOKEN = "5956160709:AAFJi7zE1drKPmD_KmO8Aitj3mePoHQPVLY"
+UPDATES_CHANNEL = "TH3ONLYCHANNEL"
+OWNER= ["5307865914"]
+PREMIUM= ["TH3ONLYCHANNEL"]
 app = pyrogram.Client("app", api_id=APP_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 with open("data.csv", encoding='UTF-8') as f:
@@ -46,7 +46,7 @@ with open("data.csv", encoding='UTF-8') as f:
 
 # ------------------------------- Subscribe --------------------------------- #
 async def Subscribe(lel, message):
-   update_channel = UPDATES_CHANNEL
+   update_channel = "TH3ONLYCHANNEL"
    if update_channel:
       try:
          user = await app.get_chat_member(update_channel, message.chat.id)
@@ -71,7 +71,7 @@ async def start(lel, message):
    user_name = '@' + message.from_user.username if message.from_user.username else None
    await add_user(id, user_name)
    but = InlineKeyboardMarkup([[InlineKeyboardButton("Login✅", callback_data="Login"), InlineKeyboardButton("Adding💯", callback_data="Adding") ],[InlineKeyboardButton("Phone⚙️", callback_data="Edit"), InlineKeyboardButton("PhoneSee💕", callback_data="Ish")],[InlineKeyboardButton("Phone Remove⚙️", callback_data="Remove"), InlineKeyboardButton("AdminPannel", callback_data="Admin")]])
-   await message.reply_text(f"**Hi** {message.from_user.first_name} **!\n\nI'm a Scraper Bot \nMade for doing Scraping,\nUsing PyroGram Client.\n\nMade with ❤️ By @ITZ_ROCKSTAR**", reply_markup=but)
+   await message.reply_text(f"**Hi** {message.from_user.first_name} **!\n\nI'm a Scraper Bot \nMade for doing Scraping,\nUsing PyroGram Client.\n\nMade with ❤️ By @SexyAaditya**", reply_markup=but)
 
 
 
@@ -93,26 +93,26 @@ async def phone(lel, message):
       for pphone in str_list:
          a+=1
          NonLimited.append(str(pphone))
-      number = await app.ask(chat_id=message.chat.id, text="**Enter number of accounts to Login (in intiger)\n\nMade with ❤️ By @ITZ_ROCKSTAR**")
+      number = await app.ask(chat_id=message.chat.id, text="**Enter number of accounts to Login (in intiger)\n\nMade with ❤️ By @SexyAaditya**")
       n = int(number.text)
       a+=n
       if n<1 :
-         await app.send_message(message.chat.id, """**Invalid Format less then 1 Try again\n\nMade with ❤️ By @ITZ_ROCKSTAR**""")
+         await app.send_message(message.chat.id, """**Invalid Format less then 1 Try again\n\nMade with ❤️ By @SexyAaditya**""")
          return
       if a>100:
-         await app.send_message(message.chat.id, f"**You can add only {100-a} Phone no \n\nMade with ❤️ By @ITZ_ROCKSTAR**")
+         await app.send_message(message.chat.id, f"**You can add only {100-a} Phone no \n\nMade with ❤️ By @SexyAaditya**")
          return
       for i in range (1,n+1):
-         number = await app.ask(chat_id=message.chat.id, text="**Now Send Your Telegram Account's Phone Number in International Format. \nIncluding **Country Code**. \nExample: **+14154566376 = 14154566376 only not +**\n\nMade with ❤️ By @ITZ_ROCKSTAR**")
+         number = await app.ask(chat_id=message.chat.id, text="**Now Send Your Telegram Account's Phone Number in International Format. \nIncluding **Country Code**. \nExample: **+14154566376 = 14154566376 only not +**\n\nMade with ❤️ By @SexyAaditya**")
          phone = number.text
          if "+" in phone:
-            await app.send_message(message.chat.id, """**As Mention + is not include\n\nMade with ❤️ By @ITZ_ROCKSTAR**""")
+            await app.send_message(message.chat.id, """**As Mention + is not include\n\nMade with ❤️ By @SexyAaditya**""")
          elif len(phone)==11 or len(phone)==12:
             Singla = str(phone)
             NonLimited.append(Singla)
-            await app.send_message(message.chat.id, f"**{n}). Phone: {phone} Set Sucessfully✅\n\nMade with ❤️ By @ITZ_ROCKSTAR**")
+            await app.send_message(message.chat.id, f"**{n}). Phone: {phone} Set Sucessfully✅\n\nMade with ❤️ By @SexyAaditya**")
          else:
-            await app.send_message(message.chat.id, """**Invalid Number Format Try again\n\nMade with ❤️ By @ITZ_ROCKSTAR**""") 
+            await app.send_message(message.chat.id, """**Invalid Number Format Try again\n\nMade with ❤️ By @SexyAaditya**""") 
       NonLimited=list(dict.fromkeys(NonLimited))
       with open(f"Users/{message.from_user.id}/1.csv", 'w', encoding='UTF-8') as writeFile:
          writer = csv.writer(writeFile, lineterminator="\n")
@@ -121,7 +121,7 @@ async def phone(lel, message):
          for line in infile:
             outfile.write(line.replace(",", ""))
  except Exception as e:
-   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @ITZ_ROCKSTAR**")
+   await app.send_message(message.chat.id, f"**Error: {e}\n\nMade with ❤️ By @SexyAaditya**")
    return
 
 
